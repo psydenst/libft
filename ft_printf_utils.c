@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 17:49:37 by psydenst          #+#    #+#             */
-/*   Updated: 2022/09/05 20:07:08 by psydenst         ###   ########.fr       */
+/*   Created: 2022/06/28 15:50:43 by psydenst          #+#    #+#             */
+/*   Updated: 2022/09/28 18:16:35 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libftprintf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_putstr(char *s)
+{
+	int	len;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif 
+	if (s == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	len = ft_strlen(s);
+	write (1, s, len);
+	return (len);
+}
 
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strchr(char *s, int c);
-size_t	ft_strlen(char *s);
-char	*get_next_line(int fd);
-char	*ft_read_and_save(char *save, int fd);
-char	*ft_save_rest(char *save);
-char	*get_line(char *save);
-
-#endif
+int	ft_putchar(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}

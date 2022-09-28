@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:57:39 by psydenst          #+#    #+#             */
-/*   Updated: 2022/05/27 17:13:50 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:12:01 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <unistd.h> 
 # include <stdlib.h>
+# include "libftprintf.h"
+
 
 typedef struct s_list
 {
