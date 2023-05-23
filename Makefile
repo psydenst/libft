@@ -40,7 +40,6 @@ SRCS =	ft_atoi.c \
 		ft_put_unsig_nbr.c \
 		ft_putnbr.c \
 		get_next_line.c \
-		get_next_line.h \
 		get_next_line_utils.c
 
 SRCS_BONUS	=	ft_lstnew_bonus.c \

@@ -6,13 +6,13 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:27:28 by psydenst          #+#    #+#             */
-/*   Updated: 2022/06/16 15:40:15 by psydenst         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:42:12 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen_cp(char *s)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_cp(char *s1, char *s2)
 {
 	char	*p;
 	size_t	a;
@@ -37,7 +37,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1 = (char *)malloc(1 * sizeof(char));
 		s1[0] = '\0';
 	}
-	p = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * (sizeof(char)));
+	p = malloc((ft_strlen_cp(s1) + ft_strlen_cp(s2) + 1) * (sizeof(char)));
 	if (!p)
 		return (NULL);
 	a = -1;
@@ -52,7 +52,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (p);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_cp(char *s, int c)
 {
 	size_t	i;
 

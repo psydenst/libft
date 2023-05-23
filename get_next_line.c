@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:51:31 by psydenst          #+#    #+#             */
-/*   Updated: 2022/06/16 16:03:33 by psydenst         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:39:50 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_read_and_save(char *save, int fd)
 	if (!buffer)
 		return (NULL);
 	bytes_i_ve_read = 1;
-	while (!ft_strchr(save, '\n') && bytes_i_ve_read != 0)
+	while (!ft_strchr_cp(save, '\n') && bytes_i_ve_read != 0)
 	{
 		bytes_i_ve_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_i_ve_read == -1)
@@ -30,7 +30,7 @@ char	*ft_read_and_save(char *save, int fd)
 			return (NULL);
 		}
 		buffer[bytes_i_ve_read] = '\0';
-		save = ft_strjoin(save, buffer);
+		save = ft_strjoin_cp(save, buffer);
 	}
 	free (buffer);
 	return (save);
@@ -78,7 +78,7 @@ char	*ft_save_rest(char *save)
 		free (save);
 		return (NULL);
 	}
-	ret = (char *)malloc((ft_strlen(save) - i + 1) * sizeof(char));
+	ret = (char *)malloc((ft_strlen_cp(save) - i + 1) * sizeof(char));
 	if (!ret)
 		return (NULL);
 	j = 0;
